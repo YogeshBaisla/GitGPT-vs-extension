@@ -3,7 +3,7 @@ import { GITGPTPanel } from "./panels/GITGPTPanel";
 
 export function activate(context: ExtensionContext) {
   // Create the show hello world command
-  const showHelloWorldCommand = commands.registerCommand("hello-world.showHelloWorld", () => {
+  const showHelloWorldCommand = commands.registerCommand("gitgpt.run", () => {
     GITGPTPanel.render(context.extensionUri);
   });
 

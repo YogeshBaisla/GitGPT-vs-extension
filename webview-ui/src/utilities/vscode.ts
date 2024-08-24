@@ -9,6 +9,7 @@ import type { WebviewApi } from "vscode-webview";
  * dev server by using native web browser features that mock the functionality
  * enabled by acquireVsCodeApi.
  */
+const KEY = "GPTCHAT";
 class VSCodeAPIWrapper {
   private readonly vsCodeApi: WebviewApi<unknown> | undefined;
 
@@ -48,7 +49,7 @@ class VSCodeAPIWrapper {
     if (this.vsCodeApi) {
       return this.vsCodeApi.getState();
     } else {
-      const state = localStorage.getItem("vscodeState");
+      const state = localStorage.getItem(KEY) ?? '[]';
       return state ? JSON.parse(state) : undefined;
     }
   }
@@ -68,7 +69,7 @@ class VSCodeAPIWrapper {
     if (this.vsCodeApi) {
       return this.vsCodeApi.setState(newState);
     } else {
-      localStorage.setItem("vscodeState", JSON.stringify(newState));
+      localStorage.setItem(KEY, JSON.stringify(newState));
       return newState;
     }
   }

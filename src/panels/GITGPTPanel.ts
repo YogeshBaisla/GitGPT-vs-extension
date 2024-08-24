@@ -115,7 +115,7 @@ export class GITGPTPanel {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
           <link rel="stylesheet" type="text/css" href="${stylesUri}">
-          <title>Hello World</title>
+          <title>GitGPT</title>
         </head>
         <body>
           <div id="root"></div>
@@ -139,9 +139,9 @@ export class GITGPTPanel {
         const text = message.text;
 
         switch (command) {
-          case "hello":
+          case "ready":
             // Code that should run in response to the hello message command
-            window.showInformationMessage(text);
+            console.log("ready");
             return;
           // Add more switch case statements here as more webview message commands
           // are created within the webview context (i.e. inside media/main.js)
