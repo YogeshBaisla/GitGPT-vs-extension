@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "gitgpt.helloWorld",
-        "title": "Hello World"
+        "command": "gitgpt.run",
+        "title": "GITGPT"
       }
     ]
   },
