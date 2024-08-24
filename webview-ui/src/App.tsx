@@ -2,7 +2,9 @@
 // import { VSCodeButton } from "@vscode/webview-ui-toolkit/react";
 import React, { useState } from 'react';
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: 'sk-5IRLU3mdqxjA6GXXKeX-YlRXg2_x-EjfRb2oBNdlqcT3BlbkFJmaWyvQhL-Lzcs8VVCe2YM9XajS9gql-Ovj-AKpjzgA',dangerouslyAllowBrowser: true });
+
+const apiKey = import.meta.env.VITE_API_URL;
+const openai = new OpenAI({ apiKey: apiKey,dangerouslyAllowBrowser:true});
 
 // Define types for the API response and message objects
 
