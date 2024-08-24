@@ -13,7 +13,7 @@ import { getNonce } from "../utilities/getNonce";
  * - Setting message listeners so data can be passed between the webview and extension
  */
 export class GITGPTPanel {
-  public static currentPanel: HelloWorldPanel | undefined;
+  public static currentPanel: GITGPTPanel | undefined;
   private readonly _panel: WebviewPanel;
   private _disposables: Disposable[] = [];
 
@@ -51,9 +51,9 @@ export class GITGPTPanel {
       // If a webview panel does not already exist create and show a new one
       const panel = window.createWebviewPanel(
         // Panel view type
-        "showHelloWorld",
+        "gitGPT",
         // Panel title
-        "Hello World",
+        "GitGPT",
         // The editor column the panel should be displayed in
         ViewColumn.One,
         // Extra panel configurations
